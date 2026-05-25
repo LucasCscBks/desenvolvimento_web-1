@@ -5,10 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wolverine - Detalhes</title>
     <style>
+        :root {
+            color-scheme: dark;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            background-image: url('x-men_background.jpg');
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #f4f7fb;
+            background-image: linear-gradient(rgba(8, 14, 29, 0.74), rgba(8, 14, 29, 0.74)), url('x-men_background.jpg');
             background-size: cover;
             background-attachment: fixed;
+            background-position: center;
+        }
+
+        header,
+        nav,
+        main,
+        footer {
+            width: min(1100px, calc(100% - 2rem));
+            margin: 0 auto;
+        }
+
+        header {
+            padding: 2rem 0 1rem;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            padding: 1rem 0 2rem;
+        }
+
+        nav a {
+            color: #f4f7fb;
+            text-decoration: none;
+            background: rgba(11, 23, 51, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 999px;
+            padding: 0.7rem 1rem;
+        }
+
+        nav a:hover {
+            background: #d6a21f;
+            color: #111827;
+        }
+
+        main {
+            padding: 0 0 2rem;
+        }
+
+        article {
+            background: rgba(8, 14, 29, 0.88);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 20px;
+            padding: 1.5rem;
+            margin-bottom: 1.25rem;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.22);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 16px;
+        }
+
+        footer {
+            padding: 1rem 0 2rem;
+            font-size: 0.95rem;
+        }
+
+        footer a {
+            color: #f7d66a;
         }
     </style>
 </head>
@@ -21,6 +94,7 @@
     <nav>
         <a href="index.html">Home</a>
         <a href="detalhes.html">Personagem</a>
+        <a href="admin/login.html">Admin</a>
         <a href="sobre.html">Autor</a>
     </nav>
 

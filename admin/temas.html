@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administração | Objetos Tema</title>
+    <style>
+        :root {
+            color-scheme: dark;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #f4f7fb;
+            background-image: linear-gradient(rgba(8, 14, 29, 0.82), rgba(8, 14, 29, 0.82)), url('../x-men_background.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        header,
+        nav,
+        main,
+        footer {
+            width: min(1100px, calc(100% - 2rem));
+            margin: 0 auto;
+        }
+
+        header {
+            padding: 2rem 0 1rem;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            padding: 1rem 0 2rem;
+        }
+
+        nav a,
+        nav summary {
+            color: #f4f7fb;
+            text-decoration: none;
+            background: rgba(11, 23, 51, 0.84);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 999px;
+            padding: 0.7rem 1rem;
+            cursor: pointer;
+        }
+
+        nav a:hover,
+        nav summary:hover {
+            background: #d6a21f;
+            color: #111827;
+        }
+
+        nav details ul {
+            list-style: none;
+            padding: 0.75rem 0 0;
+            margin: 0;
+            display: grid;
+            gap: 0.5rem;
+        }
+
+        nav details a {
+            display: inline-block;
+            width: 100%;
+        }
+
+        main {
+            padding: 0 0 2rem;
+        }
+
+        .grid {
+            display: grid;
+            gap: 1.25rem;
+        }
+
+        .card {
+            background: rgba(8, 14, 29, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 24px;
+            padding: 1.5rem;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.28);
+        }
+
+        label {
+            display: block;
+            margin: 0.9rem 0 0.35rem;
+            font-weight: 700;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            background: rgba(255, 255, 255, 0.08);
+            color: #f4f7fb;
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .actions,
+        .table-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        button,
+        .button-link {
+            display: inline-block;
+            padding: 0.85rem 1.2rem;
+            border-radius: 999px;
+            border: 0;
+            background: #d6a21f;
+            color: #111827;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .danger {
+            background: #ef4444;
+            color: white;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        th,
+        td {
+            padding: 0.9rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        footer {
+            padding: 1rem 0 2rem;
+            font-size: 0.95rem;
+        }
+
+        footer a {
+            color: #f7d66a;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Área de Administração</h1>
+        <p>Cadastro e manutenção dos objetos tema</p>
+    </header>
+
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="login.html">Login</a>
+        <details open>
+            <summary>Administração</summary>
+            <ul>
+                <li><a href="temas.html">Cadastro de objetos tema</a></li>
+                <li><a href="usuarios.html">Cadastro de usuários</a></li>
+            </ul>
+        </details>
+        <a href="../sobre.html">Autor</a>
+    </nav>
+
+    <main class="grid">
+        <section class="card">
+            <h2>Formulário para cadastro/edição</h2>
+            <form>
+                <label for="tema-nome">Nome do objeto tema</label>
+                <input id="tema-nome" name="nome" type="text" placeholder="Ex.: Ciclope">
+
+                <label for="tema-descricao">Descrição</label>
+                <textarea id="tema-descricao" name="descricao" placeholder="Descreva o objeto tema"></textarea>
+
+                <div class="actions">
+                    <button type="submit">Salvar</button>
+                    <a class="button-link" href="temas.html">Limpar</a>
+                </div>
+            </form>
+        </section>
+
+        <section class="card">
+            <h2>Lista de objetos cadastrados</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Descrição</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Wolverine</td>
+                        <td>Personagem principal do universo X-Men.</td>
+                        <td>
+                            <div class="table-actions">
+                                <a class="button-link" href="temas.html">Editar</a>
+                                <a class="button-link danger" href="temas.html">Apagar</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ciclope</td>
+                        <td>Líder tático da equipe mutante.</td>
+                        <td>
+                            <div class="table-actions">
+                                <a class="button-link" href="temas.html">Editar</a>
+                                <a class="button-link danger" href="temas.html">Apagar</a>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>Desenvolvido por <a href="../sobre.html">Lucas Sousa Reis</a></p>
+    </footer>
+</body>
+</html>
